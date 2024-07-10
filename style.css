@@ -1,0 +1,120 @@
+:root {
+    --Yellow: #F4D04E;
+    --Black: #111111;
+    --Pure-White: #FFFFFF;
+    --Grey: #7F7F7F;
+}
+@font-face {
+    font-family: 'Figtree';
+    src: url('./fonts/Figtree-VariableFont_wght.ttf');
+}
+* {
+    font-family: 'Figtree';
+    text-align: left;
+    margin: 0px;
+    font-style: normal;
+    line-height: 150%; 
+    color: var(--Black, #111);
+}
+.container {
+    background-color: var(--Yellow);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.post_cards {
+    background-color: var(--Pure-White);
+    box-shadow: 8px 8px 0px 0px #000;
+    max-width: 384px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: flex-start;
+    flex-shrink: 0;
+    outline: 1px solid var(--Black, #111);
+    transition: all 0.3s;
+
+    &:hover {
+        box-shadow: 16px 16px 0px 0px #000;
+        cursor: pointer;
+        .title {
+            color: var(--Yellow, #F4D04E);
+        }
+    }
+    .image, img {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 10px;
+        height: 200px;
+        object-fit: cover;
+    }
+}
+
+.post_cards .content {
+    display: flex;
+    gap: 12px;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.post_cards .catelogies {
+    border-radius: 4px;
+    background: var(--Yellow, #F4D04E);
+    padding: 4px 12px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.post_cards .meta {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.post_cards .title {
+    font-size: 24px;
+    font-weight: 800;
+    transition: all 0.3s;
+}
+
+.post_cards .desc {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--Grey, #7F7F7F);
+}
+
+.post_cards .author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    > img {
+        width: 32px;
+        height: 32px;
+        border-radius: 32px;
+        background: url(<path-to-image>) lightgray 50% / cover no-repeat;
+    }
+    > span {
+        font-weight: 800;
+        font-size: 14px;
+    }
+}
+@media (max-width: 767px) {
+
+    .post_cards{
+        max-width: 327px;
+        .title {
+            font-size: 20px;
+        }
+        .desc {
+            font-size: 14px;
+        }
+        .meta, .catelogies {
+            font-size: 12px;
+        }
+    }
+}
